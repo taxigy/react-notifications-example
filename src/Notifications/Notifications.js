@@ -1,28 +1,47 @@
-import React, {
-  PropTypes,
-  PureComponent
-} from 'react';
+import React from 'react';
+import _ from 'lodash';
 import styles from './Notifications.scss';
 
-export default class Notifications extends PureComponent {
-  static propTypes = {
-    category: PropTypes.oneOf(['info', 'warning', 'error'])
-  };
+function destroy(notification = {}) {
+  const {
+    category = 'info',
+    onClose
+  } = notification;
 
-  constructor(...args) {
-    super(...args);
-    this.state = {};
+  if (category === 'info' && onClose instanceof Function) {
+    setTimeout(onClose, 90 * 1000);
   }
+};
 
-  render() {
-    const {
-      category = 'info'
-    } = this.props;
+export default function (props) {
+  const {
+    notifications
+  } = props;
 
-    return (
-      <div className={styles.notifications}>
-        {category}
-      </div>
-    );
-  }
+  return (
+    <div className={styles.notifications}>
+      {_.map(notifications, (notification, index) => destroy(notification) || (
+        <div
+          key={index}
+          className={styles.notification}>
+          <div
+            className={styles.notification__caption}
+            onClick={() => props.onClose()}>
+            <div className={styles.notification__header}>
+              {notification.header}
+            </div>
+            <div
+              className={styles.notification__closeButton}>
+              <i className="fa fa-times" />
+            </div>
+          </div>
+          {notification.body && (
+            <div className={styles.notification__body}>
+              {notification.body}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
 }

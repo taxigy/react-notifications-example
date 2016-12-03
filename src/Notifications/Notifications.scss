@@ -1,3 +1,35 @@
 .notifications {
-  display: block;
+  position: fixed;
+  top: 1em;
+  right: 1em;
+}
+
+.notification {
+  width: 200px;
+  max-height: 50px;
+  margin: 0 0 20px;
+  overflow: hidden;
+
+  &__caption {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: rgba(blue, 0.25);
+  }
+
+  &__header {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__closeButton {
+    width: 20px;
+    min-width: 20px;
+    max-width: 20px;
+  }
+
+  &__body {
+
+  }
 }
