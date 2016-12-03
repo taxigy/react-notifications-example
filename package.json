@@ -1,0 +1,46 @@
+{
+  "name": "react-notifications-example",
+  "version": "0.0.1",
+  "description": "An example React component that shows notifications in the UI",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"webpack-dev-server\" \"webpack --watch --progress\"",
+    "postinstall": "webpack --progress; open ./index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taxigy/react-notifications-example.git"
+  },
+  "author": "Rishat Muhametshin <rishatmuhametshin@gmail.com> (http://rishat.us/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taxigy/react-notifications-example/issues"
+  },
+  "homepage": "https://github.com/taxigy/react-notifications-example#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "concurrently": "^3.1.0",
+    "css-loader": "^0.26.1",
+    "eslint": "^3.11.1",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-react": "^6.7.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.13.0",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "moment": "^2.17.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  }
+}
