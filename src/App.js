@@ -34,6 +34,23 @@ class App extends Component {
     };
   }
 
+  componentDidUpdate() {
+    const {
+      notifications
+    } = this.state;
+    const {
+      title
+    } = document;
+    const actualTitle = title.replace(/^🗒\d+\s—\s/, '');
+
+    if (notifications.length === 0) {
+      document.title = actualTitle;
+    } else {
+      document.title = `🗒${notifications.length} — ${actualTitle}`;
+    }
+
+  }
+
   handleAddNotification() {
     const {
       notifications
