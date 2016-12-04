@@ -54,7 +54,7 @@ class App extends Component {
     } = this.state;
     const index = _.findIndex(notifications, e => e.id === id);
 
-    if (_.isNumber(index)) {
+    if (index >= 0) {
       this.setState({
         notifications: _.concat(
           _.slice(notifications, 0, index),
