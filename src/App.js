@@ -21,7 +21,8 @@ function generateNotification() {
   return {
     header,
     body,
-    category
+    category,
+    id: new Date() // <- TODO: make it more reliable
   };
 }
 
@@ -37,25 +38,23 @@ class App extends Component {
     const {
       notifications
     } = this.state;
-    const notificationId = Math.random(); // <- TODO: make it more reliable
+    const anotherOne = generateNotification();
 
     this.setState({
       notifications: _.concat(notifications, {
-        ...generateNotification(),
-        id: notificationId,
-        onClose: () => this.handleCloseNotification(notificationId)
+        ...anotherOne,
+        onClose: () => this.handleCloseNotification(anotherOne.id)
       })
     });
   }
 
-  // TODO: make it work
   handleCloseNotification(id) {
     const {
       notifications
     } = this.state;
     const index = _.findIndex(notifications, e => e.id === id);
 
-    if (index) {
+    if (_.isNumber(index)) {
       this.setState({
         notifications: _.concat(
           _.slice(notifications, 0, index),

@@ -26,7 +26,7 @@ export default function (props) {
           className={styles.notification}>
           <div
             className={styles.notification__caption}
-            onClick={() => props.onClose()}>
+            onClick={notification.onClose}>
             <div className={styles.notification__header}>
               {notification.header}
             </div>
