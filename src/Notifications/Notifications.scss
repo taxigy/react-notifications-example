@@ -9,27 +9,47 @@
   max-height: 50px;
   margin: 0 0 20px;
   overflow: hidden;
+  color: rgba(black, 0.75);
 
   &__caption {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    background-color: rgba(blue, 0.25);
+    padding: 1px;
+
+    &--info {
+      background-color: rgba(black, 0.25);
+    }
+
+    &--warning {
+      background-color: rgba(#F7DFD1, 0.95);
+    }
+
+    &--error {
+      background-color: rgba(#FF6262, 0.95);
+    }
   }
 
   &__header {
     width: 100%;
-    white-space: nowrap;
     overflow: hidden;
+    font-size: 0.75em;
+    font-weight: 400;
+    white-space: nowrap;
   }
 
   &__closeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 20px;
     min-width: 20px;
     max-width: 20px;
   }
 
   &__body {
-
+    font-size: 0.75em;
+    font-weight: 300;
+    background-color: rgba(white, 0.95);
   }
 }
