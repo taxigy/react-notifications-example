@@ -8,6 +8,7 @@
   width: 200px;
   max-height: 50px;
   margin: 0 0 20px;
+  background-color: rgba(#F6F6F6, 0.95);
   overflow: hidden;
   color: rgba(black, 0.75);
 
@@ -18,7 +19,7 @@
     padding: 1px;
 
     &--info {
-      background-color: rgba(black, 0.25);
+      background-color: rgba(#ECECEC, 0.95);
     }
 
     &--warning {
@@ -35,6 +36,7 @@
     overflow: hidden;
     font-size: 0.75em;
     font-weight: 400;
+    line-height: 4em / 3;
     white-space: nowrap;
   }
 
@@ -48,8 +50,10 @@
   }
 
   &__body {
+    padding: 1px;
     font-size: 0.75em;
     font-weight: 300;
+    line-height: 4em / 3;
     background-color: rgba(white, 0.95);
   }
 }
